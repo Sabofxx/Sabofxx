@@ -26,6 +26,7 @@ Every project shipped so far is graded **100/100 or above** — two of them at 1
 
 ## Currently building
 
+- **Data pipelines** — scheduled ingestion → embeddings → clustering → SQLite → publication, running unattended every 30 minutes ([spectre](https://github.com/Sabofxx/spectre))
 - **LLM agents** — Thought→Code→Observation loops, sandboxed code execution, MCP tooling, MBPP + SWE-bench evaluation
 - **Information retrieval** — BM25 + dense embedding hybrid pipelines (RRF fusion, AST chunking for code)
 - **Constrained decoding** — trie-based token masking, function calling on small models (Qwen3-0.6B)
@@ -46,9 +47,10 @@ Concepts    Memory management  ·  Multithreading / concurrency  ·  Algorithms 
 
 | Repository | What it does | Lang |
 |---|---|---|
-| [**agent-smith**](https://github.com/Sabofxx/agent-smith-42) | LLM code-agent framework — Thought→Code→Observation loop, process-isolated sandbox, MBPP + SWE-bench, MCP tools, multi-model OpenRouter benchmarks | `Python` |
+| [**spectre**](https://github.com/Sabofxx/spectre) | French news aggregator — autonomous pipeline (ingest → embeddings → clustering → SQLite → static site) running every 30 min on GitHub Actions, surfacing coverage gaps across the political spectrum | `Python` |
+| [**agent-smith**](https://github.com/Sabofxx/agent-smith-42) | LLM code-agent framework — Thought→Code→Observation loop, process-isolated sandbox, MCP tools. Benchmarked 5 models × 3 SWE-bench tasks: **3/3 resolved** with `gpt-oss-120b` (4–15 iterations, 21–150 s), 0/3 for the other four | `Python` |
 | [**rag-against-the-machine**](https://github.com/Sabofxx/rag-against-the-machine) `125/100` | RAG over the vLLM codebase — BM25 + dense MiniLM, RRF hybrid fusion, AST chunking, Qwen3-0.6B grounded answers | `Python` |
-| [**call-me-maybe**](https://github.com/Sabofxx/call-me-maybe) | Constrained-decoding function-calling tool — trie + per-arg type masking, 100% schema-valid JSON by construction | `Python` |
+| [**call-me-maybe**](https://github.com/Sabofxx/call-me-maybe) | Constrained-decoding function-calling tool — trie + per-arg type masking takes `Qwen3-0.6B` from **~30% valid JSON to 100%**, schema-valid by construction; ~95% function-selection accuracy | `Python` |
 | [**tap-42**](https://github.com/Sabofxx/tap-42) | Multiplayer text-adventure MUD over TCP — authoritative server + CLI + web GUI, RFC 42TAP, Go stdlib only | `Go` |
 | [**inception**](https://github.com/Sabofxx/42/tree/main/tronc-commun-42/inception) | Multi-container infrastructure — nginx (TLS reverse proxy) + WordPress (PHP-FPM) + MariaDB, hand-written Dockerfiles, Docker secrets | `Docker` |
 | [**pac-man-42**](https://github.com/Sabofxx/pac-man-42) | Pac-Man remake in pygame — engine/UI split, four ghost AI behaviours, state machines, persistent highscores | `Python` |

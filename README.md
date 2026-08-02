@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hey, I'm Oscar
+# Hello, I'm Oscar
 
 **Software Engineering Student @ 42 Luxembourg**
 
